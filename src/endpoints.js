@@ -1,6 +1,6 @@
 import { Router } from "express"
 
-import { Semaforo } from "./services.js"
+import { Semaforo, DiaSemana } from "./services.js"
 
 const server = Router();
 
@@ -12,3 +12,14 @@ server.get('/Semaforo/:cor', (req, resp ) => {
         Semaforo: x
     })
 })
+
+server.get('/DiaSemana', (req, resp) => {
+    const dia = req.query.dia;
+    const x = DiaSemana(dia);
+
+    resp.send({
+        dia: x
+    })
+})
+
+export default server;
