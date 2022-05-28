@@ -40,6 +40,9 @@ export function DiaSemana(dia){
     else if(dia == 6){
         nome = "sábado";
     }
+    else{
+        return "Dia invalido"
+    }
     
     return nome;
 }
